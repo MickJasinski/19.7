@@ -1,8 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const Comment = ({text, votes, id, thumbUpComment}) =>
-  <li>
-    {text} <span>votes: {votes}</span> <button onClick={() => thumbUpComment(id)}><i class="far fa-thumbs-up"></i></button>
-  </li>;
 
-export default Comment; 
+
+const Comment = ({ text, votes, id, thumbUpComment, thumbDownComment, editComment, removeComment }) => (
+	<li>
+		{text} <span>votes: {votes}</span> 
+		<button onClick={() => thumbUpComment(id)}>
+			<i className="far fa-thumbs-up" />
+		</button>
+		<button onClick={() => thumbDownComment(id)}>
+			<i className="far fa-thumbs-down" />
+		</button>
+		<button onClick={() => removeComment(id)}>
+			<i className="far fa-trash-alt" />
+		</button>
+	</li>
+);
+
+export default Comment;

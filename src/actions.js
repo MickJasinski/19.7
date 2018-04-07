@@ -14,34 +14,34 @@ function addComment(text) {
   };
 }
 
-function editComment(text, commentId) {
+function editComment(text, id) {
   return {
     type: EDIT_COMMENT,
     text,
-    id: commentId
+    id
   }
 }
 
-function removeComment(commentId) {
+function removeComment(id) {
   return {
     type: REMOVE_COMMENT,
-    id: commentId
+    id
   }
 }
 
 // thumbUpComment action object creator.
-function thumbUpComment(commentId) {
+function thumbUpComment(id) {
   return {
     type: THUMB_UP_COMMENT,
-    id: commentId
+    id
   }
 }
 
 // thumbDownComment action object creator.
-function thumbDownComment(commentId) {
+function thumbDownComment(id) {
   return {
     type: THUMB_DOWN_COMMENT,
-    id: commentId
+    id
   }
 }
 
