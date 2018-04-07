@@ -1,5 +1,5 @@
-import { ADD_COMMENT, EDIT_COMMENT } from './actions.js';
-import uuid from 'uuid'
+import { ADD_COMMENT, EDIT_COMMENT, REMOVE_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT } from './actions.js';
+// import uuid from 'uuid'
 
 function comments(state = [], action) {
   switch (action.type) {
@@ -15,6 +15,18 @@ function comments(state = [], action) {
           comment.id === action.id ? { ...comment, text: action.text } : comment
         }
       );
+    case REMOVE_COMMENT:
+      return state.filter(comment => comment.id !== action.id);
+
+    case THUMB_UP_COMMENT:
+      return state.map(comment => {
+        comment.id === action.id ? { ...comment, votes: comment.votes + 1 } : comment
+      });
+
+    case THUMB_DOWN_COMMENT:
+      return state.map(comment => {
+        comment.id === action.id ? { ...comment, votes: comment.votes - 1 } : comment
+      });
 
     default:
       return state;
