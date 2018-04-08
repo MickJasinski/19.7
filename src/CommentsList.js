@@ -1,6 +1,5 @@
 import React from "react";
 import Comment from "./CommentContainer";
-import { addComment } from "./actions";
 
 const CommentsList = ({ comments }) => {
 	return (
