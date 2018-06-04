@@ -12,6 +12,12 @@ class AddComment extends React.Component {
 		this.setState({ value: event.target.value });
 	}
 
+	// handleSubmit(event) {
+	// 	event.preventDefault();
+	// 	this.props.addComment(this.state.value);
+	// 	this.setState({ value: "" });
+	// }
+
 	handleSubmit(event) {
 		event.preventDefault();
 		this.props.addComment(this.state.value);
@@ -24,12 +30,13 @@ class AddComment extends React.Component {
 				<label>
 					Add comment:{" "}
 					<input
+						className="text"
 						type="text"
 						value={this.state.value}
 						onChange={this.handleChange}
 					/>
 				</label>
-				<input type="submit" value="Submit" />
+				<input className="submit" type="submit" value="Submit" />
 			</form>
 		);
 	}
